@@ -1,0 +1,14 @@
+security:
+    providers:
+        api_key_user_provider:
+            entity:
+                class: App:Security
+                property: apikey
+    firewalls:
+       # ...
+       main:
+           anonymous: ~
+           logout: ~
+           guard:
+               authenticators:
+                   - App\Security\TokenAuthenticator    
